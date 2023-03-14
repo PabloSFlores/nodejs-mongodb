@@ -1,10 +1,12 @@
 const express = require('express')
-const userSchema = require('../models/user')
+const userSchema = require('../models/userModel')
+const mongoose = require('mongoose')
+
 
 const router = express.Router()
 
 // create user
-router.post('/users', (req, res) => {
+router.post('/user', (req, res) => {
     const user = userSchema(req.body)
     user.save()
         .then((data) => res.json(data))
@@ -12,7 +14,7 @@ router.post('/users', (req, res) => {
 })
 
 // get all users
-router.get('/users', (req, res) => {
+router.get('/user', (req, res) => {
     userSchema
         .find()
         .then((data) => res.json(data))
@@ -20,7 +22,7 @@ router.get('/users', (req, res) => {
 })
 
 // get one user
-router.get('/users/:id', (req, res) => {
+router.get('/user/:id', (req, res) => {
     const { id } = req.params
     userSchema
         .findById(id)
@@ -29,20 +31,21 @@ router.get('/users/:id', (req, res) => {
 })
 
 //update user
-router.put('/users/:id', (req, res) => {
+router.put('/user/:id', (req, res) => {
     const { id } = req.params
-    const { name, age, email } = userSchema(req.body)
+    const { name, surname, lastname, age, email, password } = userSchema(req.body)
     userSchema
-        .updateOne({ _id: id }, { $set: { name, age, email } })
+        .updateOne({ _id: mongoose.Types.ObjectId(id) }, { $set: { name, surname, lastname, age, email, password } })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }))
 })
 
 //delete user
-router.delete('/users/:id', (req, res) => {
+router.patch('/user/:id', (req, res) => {
     const { id } = req.params
+    const { status } = userSchema(req.body)
     userSchema
-        .deleteOne({_id: id})
+        .updateOne({ _id: mongoose.Types.ObjectId(id) }, { $set: {'status': status} })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }))
 })
