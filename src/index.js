@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 mongoose.set('strictQuery', false)
 require('dotenv').config()
 const userRoutes = require('./routes/userRouter')
@@ -11,6 +12,9 @@ const port = process.env.PORT || 9000
 
 // middleware
 app.use(express.json())
+app.use(cors(
+    {origin: '*'}
+))
 app.use('/api-lego', userRoutes)
 app.use('/api-lego', postRouter)
 app.use('/api-lego', productRouter)
