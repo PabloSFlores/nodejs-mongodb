@@ -25,6 +25,10 @@ const productSchema = mongoose.Schema({
         type: Number,
         required: false
     },
+    image:{
+        type: String,
+        required: true
+    },
     status:{
         type: Boolean,
         required: false

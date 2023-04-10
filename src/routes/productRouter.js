@@ -44,6 +44,7 @@ router.put('/product/:idProduct', (req, res) => {
                 'posts.$.product.min_age': posts[0].product.min_age,
                 'posts.$.product.max_age': posts[0].product.max_age,
                 'posts.$.product.pieces': posts[0].product.pieces,
+                'posts.$.product.image': posts[0].product.image,
                 'posts.$.product.vip_points': posts[0].product.vip_points
             }
         }

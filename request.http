@@ -64,6 +64,7 @@ Content-Type: application/json
             "max_age":10,
             "pieces":200,
             "vip_points":1000,
+            "image":"https://firebasestorage.googleapis.com/v0/b/sipiap.appspot.com/o/logo?alt=media&token=4251aceb-95d3-4181-b7b1-b12a55ed7312", 
             "status": true
         }
     }
@@ -75,19 +76,20 @@ Content-Type: application/json
 
 {
     "posts":{
-        "title":"Vendo legos 2",
-        "description":"Lego de star wars",
+        "title":"Estoy vendiendo un set en buen estado",
+        "description":"Lego de Minecraft",
         "rating":10,
-        "price":10000,
-        "condition":"Nuevo",
+        "price":4700,
+        "condition":"Semi-nuevo",
         "status": true,
         "product":{
-            "name":"Lego Starwars",
-            "details":"Esta bonito",
+            "name":"Lego Minecraft",
+            "details":"EEn buen estado",
             "min_age":5,
             "max_age":10,
             "pieces":200,
             "vip_points":100,
+            "image":"https://firebasestorage.googleapis.com/v0/b/sipiap.appspot.com/o/logo?alt=media&token=4251aceb-95d3-4181-b7b1-b12a55ed7312", 
             "status": true
         }
     }
@@ -125,6 +127,7 @@ Content-Type: application/json
             "max_age":10,
             "pieces":200,
             "vip_points":100,
+            "image":"https://firebasestorage.googleapis.com/v0/b/sipiap.appspot.com/o/logo?alt=media&token=4251aceb-95d3-4181-b7b1-b12a55ed7312", 
             "status": true
         }
     }
